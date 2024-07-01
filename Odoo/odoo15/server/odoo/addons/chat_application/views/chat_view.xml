@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <record id="my_chat_view" model="ir.ui.view">
+        <field name="name">My Chat View</field>
+        <field name="model">mail.channel</field>
+        <field name="inherit_id" ref="mail.channel_view_form" />
+        <field name="arch" type="xml">
+            <field name="custom_field" type="char" string="Custom Field" />
+        </field>
+    </record>
+    <record id="action_chat_view" model="ir.actions.act_window">
+        <field name="name">Students action</field>
+        <field name="view_id" ref="my_chat_view" />
+        <field name="res_model">mail.channel</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+    <menuitem id="menu_chat_view" name="Chat Application menu" action="action_chat_view" /> -->
+</odoo>

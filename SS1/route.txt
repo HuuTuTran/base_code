@@ -1,0 +1,8 @@
+ch?y file d?u tiên:
+	Login.py:
+		+N?u dã dang nh?p s? redirect sang main.py
+		+if loggin thành công:=>main.py=>choose option=>n?u ch?n choi=>play mode=>nh?p tên ng choi s? 2=>
+			choi xong s? ra rsl.py.ch?n play again s? nh?y ra test.py ho?c exit s? ra main.py
+		+else:Login l?i
+	Main.py:
+		+N?u chua dang nh?p s? redirect ra login.py

@@ -1,0 +1,42 @@
+##create virtual enviroment
+C:\path\to\python3.10\python.exe -m venv myenv
+
+## run odoo 
+python odoo-bin -c odoo.conf
+
+In the Odoo ORM, there are several common functions and methods that you can use to interact with the models and their records. Here are some of the key functions you might encounter:
+
+1. **Model Access**:
+   - `request.env['model_name']`: Retrieves a reference to the specified model.
+
+2. **Record Retrieval**:
+   - `search([domain])`: Retrieves a recordset of records matching the specified domain (filter).
+   - `browse(ids)`: Retrieves a recordset of records with the specified IDs.
+   - `read(fields)`: Retrieves a list of dictionaries containing the specified fields for each record.
+
+3. **Record Creation and Modification**:
+   - `create(vals)`: Creates a new record with the specified values.
+   - `write(vals)`: Updates the values of the current record(s).
+   - `unlink()`: Deletes the current record(s).
+
+4. **Computed Fields**:
+   - `@api.depends('field1', 'field2')`: Decorator to mark a field as computed, based on the specified dependent fields.
+   - `@api.onchange('field')`: Decorator to trigger a method when a field is changed.
+
+5. **Relational Fields**:
+   - `Many2one(model_name, ...)`: Defines a many-to-one relationship with another model.
+   - `One2many(model_name, inverse_name, ...)`: Defines a one-to-many relationship with another model.
+   - `Many2many(model_name, ...)`: Defines a many-to-many relationship with another model.
+
+6. **Contexts and Domains**:
+   - `with_context(ctx)`: Executes the current operation with the specified context.
+   - `filtered(domain)`: Filters the current recordset based on the specified domain.
+   - `sorted(key=...)`: Sorts the current recordset based on the specified key.
+
+7. **Other Utilities**:
+   - `ensure_one()`: Ensures that the current recordset has only one record.
+   - `mapped(field)`: Returns a list of the specified field values for each record in the recordset.
+
+These are just a few examples of the functions and methods available in the Odoo ORM. The specific functions and their usage may vary depending on the Odoo version and the specific requirements of your application.
+
+I'd recommend referring to the Odoo documentation for more detailed information on the ORM and the available functions and methods: [Odoo ORM Documentation](https://www.odoo.com/documentation/14.0/developer/misc/api/orm.html)

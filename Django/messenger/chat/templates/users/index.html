@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+    {% for question in products %}
+        <tr>
+            <td>{{question.name}} </td>
+            <td>{{question.price}}</td>
+            <td><a href="{% url 'products.detail' question.id  %}" >Detail</a></td>
+        </tr>
+
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,9 @@
+<form action="{% url 'products.submit_add' %}" method="post" >
+    {% csrf_token %}
+    id:<input type="text" name ="id" /><br>
+    name:<input type="text" name ="name" /><br>
+    price:<input type="text" name ="price" /><br>
+    color:<input type="text" name ="color" /><br>
+    manuID:<input type="text" name ="manuID" /><br>
+
+</form>    

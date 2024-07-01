@@ -1,0 +1,23 @@
+<odoo>
+    <data noupdate="0">
+        <record id="module_category_user" model="ir.module.category" >
+            <field name="name">Role</field>
+            <field name="sequence">1</field> 
+        </record>
+
+        <record id="group_user" model="res.groups" >
+            <field name="name">School Management / User</field>
+            <field name="category_id" ref="module_category_user"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+
+        </record>
+
+        <record id="group_admin" model="res.groups" >
+            <field name="name">School Management / admin</field>
+            <field name="category_id" ref="module_category_user"/>
+            <field name="implied_ids" eval="[(4, ref('group_user'))]"/>
+        </record>
+    </data>
+</odoo>
+    <!-- implied_ids =>> user in this group will also gain the permissions of group in the ref()  -->
+    <!-- category_id ->> point to roles defined in the first  model="ir.module.category" -->

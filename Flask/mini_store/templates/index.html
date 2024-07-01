@@ -1,0 +1,36 @@
+<table>
+    <tr>
+      <th>Name</th>
+      <th>SKU</th>
+      <th>cates	</th>
+      <th>tag</th>
+      <th>price</th>
+      <th>img_url</th>
+
+    </tr>
+    {% for item in data  %}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.SKU}}</td>
+      <td>{{item.cates}}</td>
+      <td>{{item.tag}}</td>
+      <td>{{item.price}}</td>
+      <td><img src="{{item.img_url}}" /> </td>
+    </tr>    
+    {% endfor %}
+    <!-- <tr>
+      <td>John Doe</td>
+      <td>32</td>
+      <td>New York</td>
+    </tr>
+    <tr>
+      <td>Jane Smith</td>
+      <td>27</td>
+      <td>Los Angeles</td>
+    </tr>
+    <tr>
+      <td>Bob Johnson</td>
+      <td>45</td>
+      <td>Chicago</td>
+    </tr> -->
+  </table>

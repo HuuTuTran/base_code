@@ -1,0 +1,6 @@
+Game Tic Tac Toe
+Map 9*9
+Nội dung đã có: Leaderboard, Instruction, Play game.
+Yêu cầu:- Thêm đang nhập người chơi
+		- Lưu điểm như thế nào
+		- Quản lý người dùng: đổi pass, cập nhật ảnh đại diện, thông tin khác...

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_students_form" model="ir.ui.view">
+        <field name="name">Students Form</field>
+        <field name="model">school_management.students</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Student Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="email"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_students_tree" model="ir.ui.view">
+        <field name="name">Students List</field>
+        <field name="model">school_management.students</field>
+        <field name="arch" type="xml">
+            <tree string="Students">
+                <field name="name"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+
+    <record id="action_view_students" model="ir.actions.act_window">
+        <field name="name">Students action</field>
+        <field name="res_model">school_management.students</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_students_tree"/>
+    </record>
+    <!-- view_id => view above -->
+
+    <record id="action_view_students_form" model="ir.actions.act_window">
+        <field name="name">create form</field>
+        <field name="res_model">school_management.students</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_students_form"/>
+    </record>
+
+
+
+
+    <menuitem id="menu_students_form"
+              name="single menu"
+              action="action_view_students"
+              />  <!-- action => action id  above -->
+
+
+    <menuitem id="menu_students_list"
+              name="parent menu"
+    />   <!-- parent menu => No need the action pointed -->
+
+    <menuitem id="menu_students_form_2"
+              name="children menu list"
+              action="action_view_students"
+              parent="menu_students_list"/>                
+
+    <menuitem id="menu_students_form_3"
+              name="children menu form"
+              action="action_view_students_form"
+              parent="menu_students_list"/>   
+
+
+    <record id="controller_action" model="ir.actions.act_window">
+        <field name="name">My Action</field>
+        <field name="res_model">school_management.students</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="context">{'url': 'http://localhost:8069/get_all_students'}</field>
+    </record>
+    <menuitem id="menu_controllers"
+              name="menu controllers"
+              action="controller_action"
+    />      
+
+
+
+    <record id="view_subjects_form" model="ir.ui.view">
+        <field name="name">Subjects Form</field>
+        <field name="model">school_management.subjects</field>
+        <field name="arch" type="xml">
+            <form string="Subject Information">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="no_credits"/>
+                        <field name="is_required"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_subjects_tree" model="ir.ui.view">
+        <field name="name">Subjects Tree</field>
+        <field name="model">school_management.subjects</field>
+        <field name="arch" type="xml">
+            <tree string="Subjects">
+                <field name="name"/>
+                <field name="no_credits"/>
+                <field name="is_required"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="subject_action" model="ir.actions.act_window">
+        <field name="name">subject action</field>
+        <field name="res_model">school_management.subjects</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref ="view_subjects_tree"  />
+    </record>
+
+    <menuitem id="menu_subjects"
+              name="subject menu"
+              action="subject_action"
+/>  
+
+
+</odoo>

@@ -1,0 +1,5 @@
+users (id,usn,pwd,status)
+user-relations(id, id_1, id_2)
+messengers( id, content , id_group , date)
+group (id , name)
+member (id, group_id, user_id)
