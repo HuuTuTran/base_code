@@ -1,0 +1,14 @@
+It provides a quantitative measure of how much of the source code is executed when the test suite runs. 
+
+Higher test coverage usually indicates that more parts of the code are being tested, which can lead to fewer bugs and more reliable software.
+
+
+
+coverage run -m unittest discover
+
+
+coverage report test_my_module.py
+coverage report
+# OR for HTML report
+coverage html
+
