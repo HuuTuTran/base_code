@@ -1,0 +1,2 @@
+https://learn.microsoft.com/en-us/defender-endpoint/api/exposed-apis-create-app-webapp
+https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent?pivots=portal
